@@ -1,0 +1,31 @@
+<html>
+
+<head>
+  <title>Write example</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <script>
+    function insertRow() {
+        var table = document.getElementById("table")
+        // table.insertRow();
+        var obj = table.insertRow(-1);
+        obj.innerHTML = '<th >商品編號<input type="text" name="product"/></th>  <th >數量<input type="text" name="amount"/></th>'
+        obj.
+    }
+  </script>
+</head>
+
+<body >
+    <input type="submit" value="新增品項" onclick="insertRow()"/>
+    <table id="table" width="500" border="1" bgcolor="#cccccc" align="center">
+
+        <th >商品名稱: abc</th>  
+        <th >數量:1</th>
+        <th >金額:333</th>
+    </tr>
+    </table>
+</body>
+
+</html>
+
+

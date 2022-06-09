@@ -1,0 +1,43 @@
+<!--localhost/myProject/2.4_report.html -->
+
+<html>
+<head>
+	<title>結帳</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<script lang="JavaScript">
+	function setTable(){
+		var table = document.getElementById("table")
+		var obj = table.insertRow(-1);
+		obj.innerHTML = 
+		'<th >商品<input type="text" name="product"/></th>'+
+		'<th >數量<input type="text" name="amount"/></th>'
+
+	}
+</script>
+
+<body>
+	
+	<h1 align="center">營收報表
+		
+	</h1>
+	<!-- <form action="create.php" method="post">	 -->
+	<table id="table" width="500" border="1" bgcolor="#cccccc" align="center">
+
+	<tr ><td colspan="2">現金總額:200000</td></tr>
+	<tr ><td colspan="2">刷卡總額:150000</td></tr>
+	<tr ><td colspan="2">作廢金額:2000</td></tr>
+	<tr ><td colspan="2">總額:350000</td></tr>
+
+
+
+	</table>
+	<!-- </form> -->
+	<div align ="center">
+
+		<p></p>
+		<input type="submit" value="上一頁"/>
+	</div>	
+</body>
+	
+</html>

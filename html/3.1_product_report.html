@@ -1,0 +1,56 @@
+<!--localhost/myProject/3.1_product_report.html -->
+
+<html>
+<head>
+	<title>結帳</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<script lang="JavaScript">
+	function setTable(){
+		var table = document.getElementById("table")
+		var obj = table.insertRow(-1);
+		obj.innerHTML = 
+		'<th >商品<input type="text" name="product"/></th>'+
+		'<th >數量<input type="text" name="amount"/></th>'
+
+	}
+</script>
+
+<body>
+	
+	<h1 align="center">商品銷售紀錄
+		
+	</h1>
+	<!-- <form action="create.php" method="post">	 -->
+	<table id="table" width="500" border="1" bgcolor="#cccccc" align="center">
+
+		<tr >
+			<th >商品名稱</th>
+			<th >ID</th>
+			<th >銷售數量</th>
+		</tr>
+		<tr >
+			<td >商品A</td>
+			<td >xxxxxxx</td>
+			<td >xxx</td>
+		</tr>
+		<tr >
+			<td >商品B</td>
+			<td >xxxxxxx</td>
+			<td >xxxx</td>
+		</tr>
+			
+
+
+	</table>
+	<!-- </form> -->
+	<div align ="center">
+
+		<p></p>
+		<input type="submit" value="從高到低"/>
+		<input type="submit" value="從低到高"/>
+		<input type="submit" value="上一頁"/>
+	</div>	
+</body>
+	
+</html>

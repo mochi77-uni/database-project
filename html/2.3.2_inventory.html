@@ -1,0 +1,44 @@
+<!--localhost/myProject/2.3.2inventory.html -->
+
+<html>
+<head>
+	<title>結帳</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<script lang="JavaScript">
+	function setTable(){
+		var table = document.getElementById("table")
+		var obj = table.insertRow(-1);
+		obj.innerHTML = 
+		'<th >商品<input type="text" name="product"/></th>'+
+		'<th >數量<input type="text" name="amount"/></th>'
+
+	}
+</script>
+
+<body>
+	
+	<h1 align="center">銷售紀錄
+		
+	</h1>
+	<!-- <form action="create.php" method="post">	 -->
+	<table id="table" width="500" border="1" bgcolor="#cccccc" align="center">
+	<th >品名: abc</th>  
+
+	<tr ><td>資訊:abc</td></tr>
+	<tr ><td>資訊:abc</td></tr>
+	<tr ><td>資訊:abc</td></tr>
+	<tr ><td>資訊:abc</td></tr>
+	<tr ><td>資訊:abc</td></tr>
+
+
+
+	</table>
+	<!-- </form> -->
+	<div align="center">
+		<p></p>
+		<input type="submit" value="上一頁"/>
+	</div>	
+</body>
+	
+</html>
