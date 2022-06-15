@@ -19,7 +19,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
-if (isset($_POST['way']) && isset($_POST['user_ID']) && isset($_POST['time']) && isset($_POST['total']) && isset($_POST['book_ID'])) {
+if (isset($_POST['way']) && isset($_POST['user_ID']) && isset($_POST['time']) && isset($_POST['total'])  && isset($_POST['book_ID']) && isset($_POST['amount'])) {
 	$trans_ID;
 	$temp = 0;
 	$way = $_POST['way'];
@@ -27,6 +27,7 @@ if (isset($_POST['way']) && isset($_POST['user_ID']) && isset($_POST['time']) &&
 	$time = $_POST['time'];
 	$total = $_POST['total'];
 	$book_ID = $_POST['book_ID'];
+	$amount = $_POST['amount'];
 	
 	$sql_q0 = "select max((int)ID) from transaction";//目前trans的最後一號
 	$trans_ID = mysqli_query($conn,$sql_q0);
@@ -37,7 +38,7 @@ if (isset($_POST['way']) && isset($_POST['user_ID']) && isset($_POST['time']) &&
 
 	$sql_q1 = "select content from promotion;";//應放在check.html
 	$sql_q2 = "insert into transaction values('$trans_ID', '$way', '$user_ID', '$time', '$total', NULL);";
-	$sql_q3 = "insert into books_trans values('$book_ID', '$trans_ID');";
+	$sql_q3 = "insert into books_trans values('$book_ID', '$trans_ID', '$amount');";
 	$result1 = mysqli_query($conn,$sql_q1); 
 	$result2 = mysqli_query($conn,$sql_q2);
 	$result3 = mysqli_query($conn,$sql_q3);
