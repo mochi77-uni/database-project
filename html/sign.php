@@ -29,13 +29,20 @@ if (isset($_POST['account']) && isset($_POST['password'])) {
         header("Location: main.php");
         exit;
 	} else if($result == NULL) {
-		echo "<h2 align='center'><font color='antiquewith'>無此帳號!!</font></h2>";
+		echo  "<script type='text/javascript'>alert('無此帳號!!');</script>";
 	} else {
-		echo "<h2 align='center'><font color='antiquewith'>密碼錯誤!!</font></h2>";
+		echo  "<script type='text/javascript'>alert('密碼錯誤!!');</script>";
 	}
+	// } else if($result == NULL) {
+	// 	echo "<h2 align='center'><font color='antiquewith'>無此帳號!!</font></h2>";
+	// } else {
+	// 	echo "<h2 align='center'><font color='antiquewith'>密碼錯誤!! </font></h2>";
+	// }
 
 }else{
 	echo "資料不完全";
+	echo $account;
+	
 }
 mysqli_free_result($result);
 $conn→close();		
