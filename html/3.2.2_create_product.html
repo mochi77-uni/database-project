@@ -10,26 +10,59 @@
 		var table = document.getElementById("table")
 		var arr = new Array("ID","名字","分類","作者","譯者","版號","價錢","出版日期","書本介紹","頁數","大小","語言","裝訂方式")
 		var obj = table.insertRow(-1);
-		obj.innerHTML = 
-		'<th >商品<input type="text" name="product"/></th>'+
-		'<td ><input type="text" name="amount"/></th>'
-
 	}
 
 </script>
 
-<body onload = "setTable()">
+<body >
 	
 	<h1 align="center">編輯商品
 		
 	</h1>
 	<!-- <form action="create.php" method="post">	 -->
-	<table  id="table" width="500" border="1" bgcolor="#cccccc" align="center">
-
-		<th>
-			456
-		</th>
-
+	<table  id="table"  border="1" bgcolor="#cccccc" align="center">
+		<tr >
+			<td>
+				id
+				<input type="text" id = 'id'/>
+			</td>
+		</tr>
+		<tr >
+			<td>
+				name
+				<input type="text" id = 'name'/>
+			</td>
+		</tr>
+		<tr >
+			<td>
+				catergory
+				<input type="text" id = 'catergory'/>
+			</td>
+		</tr>
+		<tr >
+			<td>
+				writer
+				<input type="text" id = 'writer'/>
+			</td>
+		</tr>
+		<tr >
+			<td>
+				version
+				<input type="text" id = 'version'/>
+			</td>
+		</tr>
+		<tr >
+			<td>
+				date_of_publish
+				<input type="text" id = 'date_of_publish'/>
+			</td>
+		</tr>
+		<tr >
+			<td>
+				intro
+				<input type="text" id = 'intro'/>
+			</td>
+		</tr>
 	</table>
 	<!-- </form> -->
 	<div align="center">
