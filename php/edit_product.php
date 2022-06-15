@@ -3,8 +3,8 @@
 // ******** update your personal settings ******** 
 $servername = "localhost";
 $username = "root";
-$password = "j4159841598";
-$dbname = "db_class";
+$password = "db_project";
+$dbname = "db_project";
 
 // Connecting to and selecting a MySQL database
 $conn = new mysqli($servername, $username, $password, $dbname);
