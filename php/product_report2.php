@@ -34,7 +34,7 @@ if (isset($_POST['books_ID'])) {
         echo "<br> <a href='edit_product.php'>調整/a>";
     }
     else{
-    printf('error input<br>');
+    printf("error input<br>");
     }
 
 }else{
