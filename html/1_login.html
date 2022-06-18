@@ -6,8 +6,13 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 </head>
 <script>
-	function nextpage(){
-		window.location.href='2_clerk.html';
+	function nextpage(){		
+		localStorage.setItem("id","local")
+		localStorage.setItem("password","2")
+		sessionStorage.setItem("id","session")
+		sessionStorage.setItem("password","2")
+
+		// window.location.href='2_clerk.html';
 	}
 </script>
 <body>
@@ -34,4 +39,3 @@
 </body>
 	
 </html>
-

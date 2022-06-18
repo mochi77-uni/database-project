@@ -26,19 +26,27 @@ if (isset($_POST['account']) && isset($_POST['password'])) {
 	$sql_q1 = "select password from user where ID = $account;";	// ******** update your personal settings ******** 
 	$result = mysqli_query($conn,$sql_q1); 
 	if($result->num_rows > 0) {
-        while($row = $result1->fetch_assoc()) {
+        while($row = $result->fetch_assoc()) {
+
 			if($row[password] == $password ){
-				header("Location: main.php");
+				// echo "<script>
+				// 	console.log($account);
+				// </script>";
+				header("Location: 2_clerk.html");
 				exit;   
 			}
 			else{
-				echo "<h2 align='center'><font color='antiquewith'>密碼錯誤!!</font></h2>";
+				echo  "<script type='text/javascript'>alert('密碼錯誤!!');
+						window.location.href='1_login.html'
+						</script>";
 			}
 			     
         }
     }
 	else if($result->num_rows == 0){
-		echo "<h2 align='center'><font color='antiquewith'>無此帳號!!</font></h2>";
+		echo  "<script type='text/javascript'>alert('無此帳號!!');
+				window.location.href='1_login.html'
+				</script>";
 	}
 	else{
 		echo "連結失敗";
