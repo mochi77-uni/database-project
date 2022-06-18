@@ -2,13 +2,13 @@
 
 <html>
 <head>
-	<title>結帳</title>
+	<title>銷售紀錄</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 </head>
 <script>
 	function nextpage(str){
 		window.location.href=str;
-		console.log("123")
+		// console.log("123")
 	}
 
 </script>
@@ -17,7 +17,7 @@
 <body>
 	
 	<h1 align="center">銷售紀錄
-		<input type="button" value="上一頁" onclick="nextpage(2_clerk.html)"/>
+		<input type="button" value="上一頁" onclick="nextpage('2_clerk.html')"/>
 	</h1>
 	<!-- <table id="table" width="500" border="1" bgcolor="#cccccc" align="center">
 	<th >時間: 5/20 10:38</th>  
@@ -58,7 +58,10 @@
 			);    
 		}
 	}
-
+	echo('</table>');
+	echo('<form action="../php/record2.php" method="post">');
+	echo('<input type="text" name="trans_ID" value="00001" /><input type="submit"  value="查詢" />');
+	echo('</form>');
 	mysqli_free_result($result1);
 	$conn→close();		
 	?>
