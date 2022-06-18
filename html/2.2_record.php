@@ -1,33 +1,29 @@
-<!--localhost/myProject/html/2.2_record.html -->
+<!--localhost/database-project/html/2.2_record.php -->
 
 <html>
 <head>
 	<title>結帳</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 </head>
-<script lang="JavaScript">
-	function setTable(){
-		var table = document.getElementById("table")
-		var obj = table.insertRow(-1);
-		obj.innerHTML = 
-		'<th >商品<input type="text" name="product"/></th>'+
-		'<th >數量<input type="text" name="amount"/></th>'
-
+<script>
+	function nextpage(str){
+		window.location.href=str;
+		console.log("123")
 	}
+
 </script>
+
 
 <body>
 	
 	<h1 align="center">銷售紀錄
-		<input type="submit" value="上一頁"/>
+		<input type="button" value="上一頁" onclick="nextpage(2_clerk.html)"/>
 	</h1>
-	<form action="create.php" method="post">	
-	<table id="table" width="500" border="1" bgcolor="#cccccc" align="center">
+	<!-- <table id="table" width="500" border="1" bgcolor="#cccccc" align="center">
 	<th >時間: 5/20 10:38</th>  
 	<th >金額:333</th>
 	<th><input type="submit" value="詳情"/></th>
-	</table>
-	</form>
+	</table> -->
 	<?php
 
 	// ******** update your personal settings ******** 
@@ -51,15 +47,15 @@
 
 	$sql_q1 = "select * from transaction;";
 	$result1 = mysqli_query($conn,$sql_q1);
+	echo('<table id="table" width="500" border="1" bgcolor="#cccccc" align="center">');
+	echo('<tr><th>銷售紀錄ID</th><th>時間</th><th>總金額</th></tr>');
 	if($result1->num_rows > 0) {
 		while($row = $result1->fetch_assoc()) {
-			printf("%s %d %s %d %s %s<br>", 
+			printf("<tr><td>%s</td> <td>%s</td> <td>%s</td> </tr>", 
 			$row["ID"],
-			$row["way"],
-			$row["user_ID"],
 			$row["time"],
 			$row["total"],
-			$row["invalid_time"]);    
+			);    
 		}
 	}
 

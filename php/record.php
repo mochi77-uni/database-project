@@ -1,5 +1,5 @@
 <?php
-
+// http://localhost/database-project/php/record.php
 // ******** update your personal settings ******** 
 $servername = "localhost";
 $username = "root";

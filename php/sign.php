@@ -32,7 +32,7 @@ if (isset($_POST['account']) && isset($_POST['password'])) {
 				// echo "<script>
 				// 	console.log($account);
 				// </script>";
-				header("Location: 2_clerk.html");
+				header("Location: ../html/2_clerk.html");
 				exit;   
 			}
 			else{
