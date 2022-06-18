@@ -31,6 +31,7 @@ if (isset($_POST['books_ID'])) {
                 echo $row[ID]. $row[name]. $row[catergory]. $row[publisher_ID]. $row[writer]. $row[traslator]. $row[version]. $row[price]. $row[date_of_publish]. $row[intro]. $row[pages]. $row[size_l]. $row[size_w]. $row[size_h]. $row[language]. $row[binding]. "<br>";
             }
         }
+        echo "<br> <a href='edit_product.php'>調整/a>";
     }
     else{
     printf('error input<br>');
