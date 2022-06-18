@@ -1,97 +1,54 @@
-<!DOCTYPE html> 
-<html> 
-<head> 
-<title>createTable2.html</title> 
-<style type="text/css"> 
-table{ 
-border:#00ffff solid 2px; 
-border-collapse:collapse; 
-} 
-td{ 
-border:#8080ff solid 2px; 
-padding:10px; 
-} 
-</style> 
-<script type="text/javascript"> 
-var tableNode; 
-function createTable(){ 
-tableNode=document.createElement("table");//獲得物件 
-tableNode.setAttribute("id","table") 
-var row=parseInt(document.getElementsByName("row1")[0].value);//獲得行號 
-//alert(row); 
-if(row<=0 || isNaN(row) ){ 
-alert("輸入的行號錯誤，不能建立表格，請重新輸入："); 
-return; 
-} 
-var cols=parseInt(document.getElementsByName("cols1")[0].value); 
-if(isNaN(cols) || cols<=0){ 
-alert("輸入的列號錯誤，不能建立表格，請重新輸入："); 
-return; 
-} 
-//上面確定了 現在開始建立 
-for(var x=0;x<row;x  ){ 
-var trNode=tableNode.insertRow(); 
-for(var y=0;y<cols;y  ){ 
-var tdNode=trNode.insertCell(); 
-tdNode.innerHTML="單元格" (x 1) "-" (y 1); 
-} 
-} 
-document.getElementById("div1").appendChild(tableNode);//新增到那個位置 
-} 
-function delRow(){ 
-//要刪除行，必須得到table物件才能刪除，所以在建立的時候必須要設定table物件的 id 方便操作 
-var tab=document.getElementById("table");//獲得table物件 
-if(tab==null){ 
-alert("刪除的表不存在！") 
-return; 
-} 
-var rows=parseInt(document.getElementsByName("delrow1")[0].value);//獲得要刪除的物件 
-if(isNaN(rows)){ 
-alert("輸入的行不正確。請輸入要刪除的行。。。"); 
-return; 
-} 
-if (rows >= 1 && rows <= tab.rows.length) { 
-tab.deleteRow(rows-1); 
-}else{ 
-alert("刪除的行不存在！！"); 
-return ; 
-} 
-} 
-//刪除列要麻煩些， 要通過行來進行刪除 
-// 一行的cells的長度就是列的個數 
-//tab.rows[x].deleteCell(cols-1) 
-function delCols(){ 
-//獲得table物件 
-var tab=document.getElementById("table"); 
-if(tab==null){ 
-alert("刪除的表不存在！！"); 
-return ; 
-} 
-//獲得文字框裡面的內容 
-var cols=parseInt(document.getElementsByName("delcols1")[0].value); 
-//檢查是否可靠 
-if(isNaN(cols)){ 
-alert("輸入不正確。請輸入要輸出的列。。"); 
-return; 
-} 
-if(!(cols>=1 && cols<tab.rows[0].cells.length)){ 
-alert("您要刪除的行不存在！！"); 
-return; 
-} 
-for(var x=0;x<tab.rows.length;x  ){//所有的行 
-tab.rows[x].deleteCell(cols-1); 
-} 
-} 
-</script> 
-</head> 
-<body> 
-行:<input type="text" name="row1"/> 
-列:<input type="text" name="cols1"/> 
-<input type="button" value="建立表格" onclick="createTable()"/><br/> 
-<input type="text" name="delrow1"/> 
-<input type="button" value="刪除行" onclick="delRow()"/><br/> 
-<input type="text" name="delcols1"/> 
-<input type="button" value="刪除列" onclick="delCols()"/><br> 
-<div id="div1"></div> 
-</body> 
-</html> 
+<!--localhost/myProject/2.1.1_check.html -->
+
+<html>
+<head>
+	<title>結帳</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<script>
+    function insertRow() {
+        var table = document.getElementById("table")
+        // table.insertRow();
+        var obj = table.insertRow(-1);
+        obj.innerHTML = 
+		'<th >'+
+			'商品編號<input type="text" name="product"/>'+
+		'</th>'+
+		'<th >'+
+			'數量<input type="text" name="amount"/>'+
+		'</th>'
+        // console.log(obj.attributes)
+    }
+    function print(){
+        var products = document.getElementsByName("product")
+        for(var i=0 ; i<products.length ; i++){
+            console.log(products.item(i).innerText)
+        }
+    }
+</script>
+
+<body>
+	
+	<h1 align="center">結帳
+		<input type="button" value="上一頁"/>
+	</h1>
+	<!-- <form action="create.php" method="post">	 -->
+	  <table id = "table" width="500" border="1" bgcolor="#cccccc" align="center">
+		<tr>
+            <th colspan="2">
+				<input type="button" value="新增品項" onclick="insertRow()"/>
+				<input type="button" value="確定" />
+                <input type="button" value="印出" onclick="print()" />
+
+            </th>
+        </tr>    
+		<tr>
+            <th >商品編號<input type="text" name="product"/></th>
+            <th >數量<input type="text" name="amount"/></th>
+        </tr>
+	  </table>
+	</form>
+	
+</body>
+	
+</html>
