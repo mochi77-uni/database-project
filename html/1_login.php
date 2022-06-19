@@ -61,13 +61,28 @@ if ($conn->connect_error) {
 if (isset($_POST['account']) && isset($_POST['password'])) {
 	$account = $_POST['account'];
 	$password = $_POST['password'];
+	$authority = 0;
+	$stroe_ID = "00001";
 
 	$sql_q1 = "select password from user where ID = $account;";	// ******** update your personal settings ******** 
+	$sql_q2 = "select authority from user where ID = $account;";
+	$sql_q3 = "select store_ID from user where ID = $account;";
 	$result = mysqli_query($conn,$sql_q1); 
+	$result2 = mysqli_query($conn,$sql_q2); 
+	$result3 = mysqli_query($conn,$sql_q3); 
 	if($result->num_rows > 0) {
         while($row = $result->fetch_assoc()) {
-
 			if($row[password] == $password ){
+				if($result2->num_rows > 0) {
+					while($row = $result2->fetch_row()) {
+						$authority = $row[0];
+					}
+				}
+				if($result3->num_rows > 0) {
+					while($row = $result3->fetch_row()) {
+						$store_ID = $row[0];
+					}
+				}
 				session_start();
 				$_SESSION["authority"]=0;
 				
