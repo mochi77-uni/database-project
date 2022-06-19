@@ -20,7 +20,7 @@
 		<table  id="table"  border="1" bgcolor="#cccccc" align="center">
 			<tr >
 				<td>
-					帳號
+					帳號(5碼)
 					<input type="text" id = 'account' name='ID'/>
 				</td>
 			</tr>
@@ -45,9 +45,10 @@
 			</tr>
 			<tr >
 				<td>
-					所屬分店ID
-					<input type="radio" name="store_ID" value="0001" >店面1
-					<input type="radio" name="store_ID" value="0002" >店面2
+					所屬分店
+					<input type="radio" name="store_ID" value="00001" >Zhongzheng Store
+					<input type="radio" name="store_ID" value="00002" >Xindian Store
+					<input type="radio" name="store_ID" value="00003" >Xin Store
 
 				</td>
 			</tr>
@@ -108,7 +109,7 @@
 
 			}
 			else{
-				echo "<div align='center'>*資料不完全*</div>";
+				echo "<div align='center'>資料不完全</div>";
 			}
 			mysqli_free_result($result1);
 			$conn→close();	
