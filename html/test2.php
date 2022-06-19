@@ -1,8 +1,8 @@
-<!-- http://localhost/database-project/html/test.php -->
+<!-- http://localhost/database-project/html/test2.php -->
 <!DOCTYPE html>
 <html>
       
-<!-- <head>
+<head>
     <title>
         How to call PHP function
         on the click of a Button ?
@@ -23,24 +23,13 @@
     </form>
 
       
-</head> -->
+</head>
 <?php
-      
+    $arr=array(1,2,3);
     session_start();
-    foreach($_SESSION["arr"] as $e){
-        echo($e);
-    }
-    //   if(isset($_POST['button1'])) {
-    //       echo "This is Button1 that is selected";
-    //   }
-    //   if(isset($_POST['button2'])) {
-    //       echo "This is Button2 that is selected";
-    //   }
-    //   else{
-    //       echo "no selected";
-    //   }
-    //   echo ($_POST['authority']);
-
-  ?>
+    $_SESSION["arr"]=$arr;
+    $url = "test.php";
+    header("Location:$url" );
+?>
 
 </html>

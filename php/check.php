@@ -20,6 +20,7 @@ if ($conn->connect_error) {
 } 
 
 if (isset($_POST['product']) && isset($_POST['amount'])) {
+    session_start();
 	$product[] = $_POST['product'];
     $amount[] = $_POST['amount'];
     $store_ID = 0;//need to confirm
@@ -36,6 +37,7 @@ if (isset($_POST['product']) && isset($_POST['amount'])) {
             else{
                 printf("庫存不足". $amount. "，僅有". $row["number"]. "個<br>");    
             }           
+            $_SESSION['product']=$product;
         }
     }
     else {
