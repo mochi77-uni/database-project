@@ -1,8 +1,8 @@
-<!--localhost/database-project/html/2.3.1_inventory.php -->
+<!--localhost/database-project/html/2.3.2inventory.php -->
 
 <html>
 <head>
-	<title>庫存量</title>
+	<title>結帳</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 </head>
 <script lang="JavaScript">
@@ -14,34 +14,19 @@
 		'<th >數量<input type="text" name="amount"/></th>'
 
 	}
-
-	function nextpage(str){
-		window.location.href=str;
-		// console.log("123")
-	}
-
-</script>
-
 </script>
 
 <body>
 	
-	<h1 align="center">各商品庫存量
+	<h1 align="center">銷售紀錄
 		
 	</h1>
-	<form action="2.3.2_inventory.php" method="post">	
-
-		<div align="center">
-			<p></p>
-			<label for="search">搜尋詳情(輸入商品ID)</label>
-			<input type="text" name="books_ID"/>
-			<input type="submit" value="查詢">
-			<p></p>
-			<input type="button" value="上一頁" onclick="nextpage('2_route.php')"/>
-			<p></p>
-		</div>	
-
-	</form>
+	<!-- <form action="create.php" method="post">	 -->
+	<!-- </form> -->
+	<div align="center">
+		<p></p>
+		<input type="button" value="上一頁" onclick="window.history.go(-1)"/>
+	</div>	
 
 <?php
 
@@ -54,23 +39,23 @@ $dbname = "team17";
 // Connecting to and selecting a MySQL database
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-if (!$conn->set_charset("utf8")) {
-    printf("Error loading character set utf8: %s\n", $conn->error);
+if (mysql_set_charset('utf8')) {
+    printf("Error loading character set utf8\n");
     exit();
 }
-
 // Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
-if (1) {
-	$sql_q1 = "select A.books_ID, B.name, A.number from storage as A, books as B where A.books_ID = B.ID;";
+if (isset($_POST['books_ID'])) {
+    $booksID = $_POST['books_ID'];
+	$sql_q1 = "select A.books_ID, B.name, A.number from storage as A, books as B where A.books_ID = B.ID and A.books_ID = '$booksID';";
 	$result1 = mysqli_query($conn,$sql_q1);
     if($result1){
         if($result1->num_rows > 0){
             echo('<table id="table" width="500" border="1" bgcolor="#cccccc" align="center">');
-            echo('<tr><th>商品ID</th><th>商品名稱</th><th>剩餘數量</th></tr>');
+            echo('<tr><th>書本ID</th><th>書本名稱</th><th>剩餘數量</th></tr>');
         
             while($row = $result1->fetch_row()) {
                 printf("<td>%s</td> <td>%s</td> <td>%s</td></tr> ", 
@@ -92,6 +77,7 @@ mysqli_free_result($result1);
 $conn→close();	
 				
 ?>
+
 </body>
 	
 </html>

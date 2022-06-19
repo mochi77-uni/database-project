@@ -31,10 +31,10 @@
 
     <?php
         // ******** update your personal settings ******** 
-        $servername = "localhost";
-        $username = "root";
-        $password = "db_project";
-        $dbname = "db_project";
+        $servername = "140.122.184.126";
+        $username = "team17";
+        $password = "k1PEco";
+        $dbname = "team17";
 
         // Connecting to and selecting a MySQL database
         $conn = new mysqli($servername, $username, $password, $dbname);
@@ -43,8 +43,8 @@
         $sql_q2 = "select A.book_ID, B.name, sum(A.amount) from books_trans as A, books as B where A.book_ID = B.ID group by A.book_ID, B.name ORDER BY sum(amount) DESC;";
         $result2 = mysqli_query($conn,$sql_q2);
 
-        if (!$conn->set_charset("utf8")) {
-            printf("Error loading character set utf8: %s\n", $conn->error);
+        if (mysql_set_charset('utf8')) {
+            printf("Error loading character set utf8\n");
             exit();
         }
 
