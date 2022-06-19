@@ -17,7 +17,7 @@
 <body>
 	
 	<h1 align="center">銷售紀錄
-		<input type="button" value="上一頁" onclick="nextpage('2_clerk.html')"/>
+		<input type="button" value="上一頁" onclick="window.history.go(-1)"/>
 	</h1>
 	<!-- <table id="table" width="500" border="1" bgcolor="#cccccc" align="center">
 	<th >時間: 5/20 10:38</th>  

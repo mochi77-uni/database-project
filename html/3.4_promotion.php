@@ -1,4 +1,4 @@
-<!--localhost/database-project/html/3.4_promotion.html -->
+<!--localhost/database-project/html/3.4_promotion.php -->
 
 <html>
 <head>

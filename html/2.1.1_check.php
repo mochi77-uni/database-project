@@ -24,7 +24,7 @@
 <body>
 	
 	<h1 align="center">結帳
-		<input type="button" value="上一頁"/>
+		<input type="button" value="上一頁" onclick="window.history.go(-1)"/>
 	</h1>
 	<form method="post">
 	<table id = "table" width="500" border="1" bgcolor="#cccccc" align="center">
