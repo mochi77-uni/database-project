@@ -28,12 +28,8 @@ if (isset($_POST['way'])) {
 	$product[] = $_SESSION['product'];
 	$amount[] = $_SESSION['amount'];
 	$time = date("Y-m-d H:i:s");
-	if( isset($_POST['total']) == 1){
-		$total = $_POST['total'];
-	}
-	else{
-		$total = $_SESSION['total'];
-	}
+	$total = $_SESSION['total'];
+	
 	
 	$sql_q0 = "select ID from transaction where ID not in (select A.ID from transaction as A, transaction as B where  A.ID<B.ID );";//目前trans的最後一號
 	$result0 = mysqli_query($conn,$sql_q0);
@@ -49,7 +45,7 @@ if (isset($_POST['way'])) {
 	$temp = $temp+1;
 	$trans_ID = strval($temp);
 	$trans_ID = str_pad($trans_ID, 5, "0", STR_PAD_LEFT);//new ID
-
+	echo $trans_ID . $way. $user_ID . $time . $total;
 	$sql_q2 = "insert into transaction values('$trans_ID', '$way', '$user_ID', '$time', '$total', '0000-00-00 00:00:00');";
 	$result2 = mysqli_query($conn,$sql_q2);
 	$j = count($product);

@@ -104,9 +104,7 @@ if (1) {
 	
 	if( count($content) > 0){
 		$_SESSION['total'] = $total;
-		foreach($content as $eachCon){
-			echo("<p>".$eachCon."<p>");
-		}
+		
 	}
 }
 else{
