@@ -89,11 +89,21 @@
 				$password = $_POST['password'];
 				$authority = $_POST['authority'];
 				$store_ID = $_POST['store_ID'];
+				// echo('id'+$ID);
+				// echo('name'+$name);
+				// echo('psw'+$password);
+				// echo('aut'+$authority);
+				// echo('store'+$store_ID);
+
 
 				$sql_q1 = "insert into user values ( '$ID', '$name', '$password', '$authority', '$store_ID' );";
 				$result1 = mysqli_query($conn,$sql_q1);
 				if($result1){
 					echo "<div align='center'>新增成功</div>";
+
+				}
+				else{
+					echo "<div align='center'>*資料不完全*</div>";
 				}
 
 			}
