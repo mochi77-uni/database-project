@@ -84,9 +84,20 @@ if (isset($_POST['account']) && isset($_POST['password'])) {
 					}
 				}
 				session_start();
-				$_SESSION["authority"]=0;
-				
-				header("Location: 2_clerk.html");
+				$_SESSION["user_ID"]=$account;
+				$_SESSION["authority"]=$authority;
+				$_SESSION["store_ID"]=$store_ID;
+				if( $authority == 0){
+					header("Location: 2_clerk.html");
+				}
+				if( $authority == 1){
+					header("Location: 3_administrator.html");
+				}
+				else{
+					echo  "<script type='text/javascript'>alert('身分錯誤!!');
+					window.location.href='1_login.html'
+					</script>";
+			}
 				exit;   
 			}
 			else{

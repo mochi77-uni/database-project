@@ -27,7 +27,7 @@
 <?php
       
     session_start();
-    foreach($_SESSION["arr"] as $e){
+    foreach($_SESSION["err"] as $e){
         echo($e);
     }
     //   if(isset($_POST['button1'])) {
