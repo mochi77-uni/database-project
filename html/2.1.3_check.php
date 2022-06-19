@@ -1,16 +1,16 @@
 <?php
 
 // ******** update your personal settings ******** 
-$servername = "localhost";
-$username = "root";
-$password = "db_project";
-$dbname = "db_project";
+$servername = "140.122.184.126";
+$username = "team17";
+$password = "k1PEco";
+$dbname = "team17";
 
 // Connecting to and selecting a MySQL database
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-if (!$conn->set_charset("utf8")) {
-    printf("Error loading character set utf8: %s\n", $conn->error);
+if (mysql_set_charset('utf8')) {
+    printf("Error loading character set utf8\n");
     exit();
 }
 
