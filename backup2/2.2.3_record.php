@@ -30,21 +30,18 @@ session_start();
 $trans_ID = $_SESSION['trans_ID'];
 echo('<div align="center" >');
 if ($trans_ID != 0) {
+	echo("刪除");
+	echo($trans_ID);
+	// $trans_ID = $_POST['trans_ID'];
+	// $sql_q1 = "update transaction set invalid_time = '$now_time' where ID = '$trans_ID';";
+	// $sql_q2 = "delete from books_trans where transaction_ID = '$trans_ID';";
+	// $result1 = mysqli_query($conn,$sql_q1);
+	// $result2 = mysqli_query($conn,$sql_q2);
+    // if($result1 && $result2){
+	// 	echo "作廢成功<br>";
+	// }
 
-	$trans_ID = $_POST['trans_ID'];
-	$sql_q1 = "update transaction set invalid_time = '$now_time' where ID = '$trans_ID';";
-	$sql_q2 = "delete from books_trans where transaction_ID = '$trans_ID';";
-	$result1 = mysqli_query($conn,$sql_q1);
-	$result2 = mysqli_query($conn,$sql_q2);
-    if($result1 && $result2){
-		echo("<div>成功刪除".$trans_ID);
-	}
-	else{
-		echo("<div>操作失敗");
-	}
-
-	echo('<p></p><input type="button" value="確定" onclick="nextpage(\'2.2_record.php\')"/>');
-	echo("</div>");
+	echo('<input type="button" value="確定" onclick="nextpage(\'2.2_record.php\')"/>');
 }else{
 	echo "資料不完全";
 }
