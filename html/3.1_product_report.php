@@ -52,7 +52,7 @@
         if ($conn->connect_error) {
             die("Connection failed: " . $conn->connect_error);
         } 
-
+        
         $choice = 1;
         if(isset($_POST['button1'])) {
             // echo "This is Button1 that is selected";
@@ -67,17 +67,17 @@
 
         // 俊彥從這裡開始寫
                 // 1 從下往上
-        if($choice == 1){
+        if($choice == 2){
             // echo "choice 1";
             if($result1->num_rows > 0){
                 echo('<table id="table" width="500" border="1" bgcolor="#cccccc" align="center">');
-                echo('<tr><th>書本ID</th><th>書本名稱</th><th>剩餘數量</th></tr>');
+                echo('<tr><th>書本ID</th><th>書本名稱</th><th>交易數量</th></tr>');
             
-                while($row = $result1->fetch_assoc()) {
+                while($row = $result1->fetch_row()) {
                     printf("<td>%s</td> <td>%s</td> <td>%s</td></tr> ", 
-                    $row[book_ID] , 
-                    $row[name] , 
-                    $row[sum(A.amount)]);
+                    $row[0] , 
+                    $row[1] , 
+                    $row[2]);
                 }
                 echo('</table>');
             }
@@ -85,14 +85,20 @@
 
         }
         // 2 從上往下
-        else if($choice == 2){
+        else if($choice == 1){
             // echo "choice 2";
 
             if($result2->num_rows > 0){
-                echo "Book_ID   Name    amount<br>";
-                while($row = $result2->fetch_assoc()) {
-                    echo $row[book_ID] . $row[name] . $row[sum(A.amount)];
+                echo('<table id="table" width="500" border="1" bgcolor="#cccccc" align="center">');
+                echo('<tr><th>書本ID</th><th>書本名稱</th><th>交易數量</th></tr>');
+            
+                while($row = $result2->fetch_row()) {
+                    printf("<td>%s</td> <td>%s</td> <td>%s</td></tr> ", 
+                    $row[0] , 
+                    $row[1] , 
+                    $row[2]);
                 }
+                echo('</table>');
             }
             
 
