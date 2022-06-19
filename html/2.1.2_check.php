@@ -19,7 +19,6 @@
 <body>
 	
 	<h1 align="center">結帳
-		<input type="submit" value="上一頁"/>
 	</h1>
 	<?php
 
@@ -78,6 +77,7 @@ if (1) {
 
 	}
 	echo('</table>');
+	echo("<form action='2.1.2_check' method='post'");
 	echo('	<div align="center">
 		<p>原始金額'.$total.'
 		<p>最終金額<input type="text" name="amount" /></p>
