@@ -56,7 +56,7 @@
 			<p></p>
 
 
-			<input type="button" value="上一頁"/>
+			<input type="button" value="上一頁" onclick='window.location.href="2_route.php"'/>
 
 			<input type="submit" value="確定" name='submit'/>
 		</div>	

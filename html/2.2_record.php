@@ -17,13 +17,18 @@
 <body>
 	
 	<h1 align="center">銷售紀錄
-		<input type="button" value="上一頁" onclick="window.history.go(-1)"/>
+		<input type="button" value="上一頁" onclick="nextpage('2_route.php')"/>
 	</h1>
 	<!-- <table id="table" width="500" border="1" bgcolor="#cccccc" align="center">
 	<th >時間: 5/20 10:38</th>  
 	<th >金額:333</th>
 	<th><input type="submit" value="詳情"/></th>
 	</table> -->
+	<div align="center">
+		<form action="2.2.2_record.php" method="post">
+			<input type="text" name="trans_ID" value="00001" /><input type="submit"  value="查詢" />
+		</form>
+	</div>
 	<?php
 
 	// ******** update your personal settings ******** 
@@ -59,13 +64,16 @@
 		}
 	}
 	echo('</table>');
-	echo('<form action="2.2.2_record.php" method="post">');
-	echo('<input type="text" name="trans_ID" value="00001" /><input type="submit"  value="查詢" />');
-	echo('</form>');
+
+	// echo('<div align="centr">');
+	// echo('<form action="2.2.2_record.php" method="post">');
+	// echo('<input type="text" name="trans_ID" value="00001" /><input type="submit"  value="查詢" />');
+	// echo('</form>');
+	// echo('</div>');
 	mysqli_free_result($result1);
 	$conn→close();		
 	?>
-	
+
 </body>
 	
 </html>

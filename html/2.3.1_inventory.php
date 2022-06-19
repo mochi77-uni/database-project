@@ -14,6 +14,14 @@
 		'<th >數量<input type="text" name="amount"/></th>'
 
 	}
+
+	function nextpage(str){
+		window.location.href=str;
+		// console.log("123")
+	}
+
+</script>
+
 </script>
 
 <body>
@@ -29,7 +37,7 @@
 			<input type="text" name="books_ID"/>
 			<input type="submit" value="查詢">
 			<p></p>
-			<input type="button" value="上一頁" onclick="window.history.go(-1)"/>
+			<input type="button" value="上一頁" onclick="nextpage('2_route.php')"/>
 			<p></p>
 		</div>	
 

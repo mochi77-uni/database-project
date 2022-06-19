@@ -1,4 +1,4 @@
-<!--localhost/database-project/html/1_login.html -->
+<!--localhost/database-project/html/1_login.php -->
 
 <html>
 <head>

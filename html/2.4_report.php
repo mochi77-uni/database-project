@@ -14,6 +14,7 @@
 		'<th >數量<input type="text" name="amount"/></th>'
 
 	}
+    
 </script>
 
 <body>
@@ -24,7 +25,7 @@
 	<div align ="center">
 
 		<p></p>
-		<input type="button" value="上一頁" onclick='window.location.href="2_clerk.html"');
+		<input type="button" value="上一頁" onclick='window.location.href="2_route.php"');
 />
         <p></p>
 	</div>	

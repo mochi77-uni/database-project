@@ -59,7 +59,7 @@
 	<div align="center">
 		<input type="button" value="新增商品"/>
 		<p></p>
-		<input type="submit" value="上一頁(取消變更)"/>
+		<input type="submit" value="上一頁(取消變更)" onclick='window.location.href="2_route.php"'/>
 
 		<input type="submit" value="確定(確認變更)"/>
 	</div>	

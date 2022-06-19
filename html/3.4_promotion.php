@@ -42,7 +42,7 @@
 		<p></p>
 
 
-		<input type="button" value="取消"/>
+		<input type="button" value="取消" onclick='window.location.href="2_route.php"'/>
 
 		<input type="submit" value="設定促銷書籍" name="submit"/>
 	</div>	

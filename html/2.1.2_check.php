@@ -21,23 +21,6 @@
 	<h1 align="center">結帳
 		<input type="submit" value="上一頁"/>
 	</h1>
-	<!-- <form action="create.php" method="post">	 -->
-	<table id="table" width="500" border="1" bgcolor="#cccccc" align="center">
-	<th >商品名稱: abc</th>  
-	<th >數量:1</th>
-	<th >金額:333</th>
-	</table>
-	<div align="center">
-		<p>最終金額<input type="text" name="amount"/></p>
-		<p>
-			<input type="radio" id="card" name="payment"/><label for="card">刷卡</label>
-			<input type="radio" id="cash" name="payment"/><label for="cash">現金</label>
-		</p>
-		<input type="submit" value="確定"/>
-
-
-	</div>
-	</form>
 	<?php
 
 // ******** update your personal settings ******** 
@@ -61,10 +44,16 @@ if ($conn->connect_error) {
 
 if (1) {
 	$total = 0;
-	$product[] = $_SESSION['product'];
-	$amount[] = $_SESSION['amount'];
+	session_start();
+	$product = $_SESSION['product'];
+	$amount = $_SESSION['amount'];
 	$content[count($product)];
 	$j = count($product);
+	// foreach($product as $i){
+	// 	echo("id".$i);
+	// }
+	// echo("len".$j);
+	// echo('<div>'.$j.'id'.$product[0].'</div>');
 	echo('<table id="table" width="500" border="1" bgcolor="#cccccc" align="center">');
 
 	for($i=0 ; $i<$j ; $i++){
@@ -85,22 +74,30 @@ if (1) {
 				$content[$i] = $row[0];
 			}
 		}
-		echo '<td>'.$name .'</td>'.'<td>'.$amount[$i] .'</td>'.'<td>'.$price .'</td>';
+		echo '<tr><td>商品名稱'.$name .'</td>'.'<td>商品數量'.$amount[$i] .'</td>'.'<td>商品金額'.$price .'</td></tr>';
 
 	}
-
+	echo('</table>');
 	echo('	<div align="center">
-		<p>最終金額<input type="text" name="amount" value='. $total.'/></p>
+		<p>原始金額'.$total.'
+		<p>最終金額<input type="text" name="amount" /></p>
 		<p>
-			<input type="radio" id="card" name="payment"/><label for="card">刷卡</label>
-			<input type="radio" id="cash" name="payment"/><label for="cash">現金</label>
+			<input type="radio" id="card" name="payment" value="1"/><label for="card">刷卡</label>
+			<input type="radio" id="cash" name="payment" value="0"/><label for="cash">現金</label>
 		</p>
 		<input type="submit" value="確定"/>
 
 
 		</div>
 	');
-}else{
+	
+	if( count($content) > 0){
+		foreach($content as $eachCon){
+			echo("<p>".$eachCon."<p>");
+		}
+	}
+}
+else{
 	echo "資料不完全";
 }
 mysqli_free_result($result1);

@@ -39,6 +39,7 @@
 				<th >數量<input type="text" name="amount[]"/></th>
 		</tr>
 	</table>
+	</form>
 
 </body>
 <?php
@@ -96,6 +97,9 @@ if (isset($_POST['submit'])){
 		if( $success == $j ){
 			$_SESSION['product'] = $product;
 			$_SESSION['amount'] = $amount;
+			// foreach($product as $i){
+			// 	echo("id".$i);
+			// }
 			header("Location: 2.1.2_check.php");
 			exit;
 		}
@@ -110,9 +114,6 @@ if (isset($_POST['submit'])){
 }				
 ?>
 
-<div align="center">
-	<p></p>
-	<input type="submit" value="確定" name="submit" />
-</div>
-</form>
+
+
 </html>
