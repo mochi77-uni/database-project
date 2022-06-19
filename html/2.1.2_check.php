@@ -87,7 +87,7 @@ if (1) {
 		mysqli_free_result($result2);
 	}
 	echo('</table>');
-	echo("<form action='2.1.2_check' method='post'");
+	echo("<form action='2.1.3_check.php' method='post'");
 	echo('	<div align="center">
 		<p>原始金額'.$total.'
 		<p>最終金額<input type="text" name="amount" /></p>
