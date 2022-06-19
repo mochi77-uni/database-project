@@ -23,26 +23,35 @@ if (isset($_POST['product']) && isset($_POST['amount'])) {
     session_start();
 	$product[] = $_POST['product'];
     $amount[] = $_POST['amount'];
-    $store_ID = 0;//need to confirm
-	$sql_q1 = "select ID from books where '$book_ID' = ID;";
-    $sql_q2 = "select number from storage where store_ID = $store_ID and books_ID = $product;";
-	$result1 = mysqli_query($conn,$sql_q1);
-    $result2 = mysqli_query($conn,$sql_q2);
-    if ($result1->num_rows > 0 && $result2->num_rows > 0) {
-        while($row = $result2->fetch_assoc()) {
-            if($row[number] > $amount){
-                header("Location: check2.php");
-                exit;
+    $store_ID = "00001";//need to confirm
+    $j = count($product);
+    $success = 0;
+    for($i=0 ; $i<$j ; $i++){
+        $sql_q1 = "select ID from books where '$product[$i]' = ID;";
+        $result1 = mysqli_query($conn,$sql_q1);
+        if($result1->num_rows > 0){
+            $sql_q2 = "select number from storage where store_ID = $store_ID and books_ID = $product[$i];";
+            $result2 = mysqli_query($conn,$sql_q2);
+            while($row = $result2->fetch_assoc()) {
+                if($row[number] > $amount[$i]){
+                    $success++;
+                }
+                else{
+                    echo "$store_ID". "店庫存僅有". $row["number"]. "，少". ($amount[$i]-$row["number"]) . "個<br>";    
+                }           
+                
             }
-            else{
-                printf("庫存不足". $amount. "，僅有". $row["number"]. "個<br>");    
-            }           
-            $_SESSION['product']=$product;
+        }
+        else {
+            printf('沒有這本書<br>');
         }
     }
-    else {
-    printf('沒有這本書<br>');
+    if( $success == $j ){
+        $_SESSION['product']=$product;
+        header("Location: check2.php");
+        exit;
     }
+    
 
 }else{
 	echo "資料不完全";
