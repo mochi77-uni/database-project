@@ -22,21 +22,21 @@
 
     </form>
 
-    <?php
-      
-        if(isset($_POST['button1'])) {
-            echo "This is Button1 that is selected";
-        }
-        if(isset($_POST['button2'])) {
-            echo "This is Button2 that is selected";
-        }
-        else{
-            echo "no selected";
-        }
-        echo ($_POST['authority']);
-
-    ?>
       
 </head>
-  
+<?php
+      
+      if(isset($_POST['button1'])) {
+          echo "This is Button1 that is selected";
+      }
+      if(isset($_POST['button2'])) {
+          echo "This is Button2 that is selected";
+      }
+      else{
+          echo "no selected";
+      }
+      echo ($_POST['authority']);
+
+  ?>
+
 </html>

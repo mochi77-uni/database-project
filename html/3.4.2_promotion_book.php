@@ -1,4 +1,4 @@
-<!--localhost/myProject/3.2.2_create_product.html -->
+<!-- localhost/database-project/html/3.4.2_promotion_book.php -->
 
 <html>
 <head>
@@ -44,7 +44,7 @@
 
 		<input type="submit" value="取消"/>
 
-		<input type="submit" value="促銷書籍"/>
+		<input type="submit" value="下一頁"/>
 	</div>	
 </body>
 	
