@@ -22,7 +22,7 @@
             
             <input type="submit" name="button2"
                     value="從低到高"/>
-            <input type="button" value="上一頁"/>
+            <input type="button" value="上一頁" onclick='window.location.href="2_route.php"'/>
         </form>
         
 

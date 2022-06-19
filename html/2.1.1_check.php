@@ -24,14 +24,14 @@
 <body>
 	
 	<h1 align="center">結帳
-		<input type="button" value="上一頁" onclick='window.location.href="2_route.php"/>
+		<input type="button" value="上一頁" onclick='window.location.href="2_route.php"'/>
 	</h1>
 	<form method="post">
 	<table id = "table" width="500" border="1" bgcolor="#cccccc" align="center">
 		<tr>
 			<th colspan="2">
 				<input type="button" value="新增品項" onclick="insertRow()"/>
-					<input type="submit" value="確定" name='submit'/>
+					<input type="submit" value="確定" name="submit"/>
 			</th>
 		</tr>    
 		<tr>
