@@ -20,8 +20,8 @@ if ($conn->connect_error) {
 } 
 
 if (isset($_POST['product']) && isset($_POST['amount'])) {
-	$product = $_POST['product'];
-    $amount = $_POST['amount'];
+	$product[] = $_POST['product'];
+    $amount[] = $_POST['amount'];
     $store_ID = 0;//need to confirm
 	$sql_q1 = "select ID from books where '$book_ID' = ID;";
     $sql_q2 = "select number from storage where store_ID = $store_ID and books_ID = $product;";

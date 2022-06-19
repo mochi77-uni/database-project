@@ -12,10 +12,10 @@
         var obj = table.insertRow(-1);
         obj.innerHTML = 
 		'<th >'+
-			'商品編號<input type="text" name="product"/>'+
+			'商品編號<input type="text" name="product[]"/>'+
 		'</th>'+
 		'<th >'+
-			'數量<input type="text" name="amount"/>'+
+			'數量<input type="text" name="amount[]"/>'+
 		'</th>'
         console.log(obj.attributes)
     }
@@ -28,15 +28,20 @@
 	</h1>
 	<form method="post">
 	<table id = "table" width="500" border="1" bgcolor="#cccccc" align="center">
-	<tr>
-		<th colspan="2">
-			<input type="submit" value="新增品項" onclick="insertRow()"/>
-				<input type="submit" value="確定" />
-		</th>
-	</tr>    
-	
+		<tr>
+			<th colspan="2">
+				<input type="submit" value="新增品項" onclick="insertRow()"/>
+					<input type="submit" value="確定" />
+			</th>
+		</tr>    
+		<tr>
+				<th >商品編號<input type="text" name="product[]"/></th>
+				<th >數量<input type="text" name="amount[]"/></th>
+		</tr>
+	</table>
+
 </body>
-<?php
+<!-- <?php
 	if(isset($_POST['submit'])) {
 		foreach($_POST['product'] as $product){
 			echo "<script>console.log('Debug Objects: " . $product . "' );</script>";
@@ -61,10 +66,11 @@
 
 		echo('</table>');
 	}
-?>
+?> -->
 
 <div align="center">
 	<p></p>
 	<input type="submit" value="確定" name="submit" />
 </div>
+</form>
 </html>
