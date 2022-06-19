@@ -59,7 +59,6 @@ if (isset($_POST['way'])) {
 	}
 	if($result2 && $result3){
 		echo "<div align='center'>交易成功";
-
 	}
 	else{
 		echo "交易失敗<br>";
