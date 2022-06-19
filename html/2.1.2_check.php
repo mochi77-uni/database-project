@@ -89,8 +89,7 @@ if (1) {
 	echo('</table>');
 	echo("<form action='2.1.3_check.php' method='post'");
 	echo('	<div align="center">
-		<p>原始金額'.$total.'
-		<p>最終金額<input type="text" name="amount" /></p>
+		<p>總金額'.$total.'</p>
 		<p>
 			<input type="radio" id="card" name="way" value="1"/><label for="card">刷卡</label>
 			<input type="radio" id="cash" name="way" value="0"/><label for="cash">現金</label>
@@ -102,10 +101,11 @@ if (1) {
 		</form>
 	');
 	
-	if( count($content) > 0){
+	if( $total > 0){
 		$_SESSION['total'] = $total;
 		
 	}
+	// echo($total);
 }
 else{
 	echo "資料不完全";
