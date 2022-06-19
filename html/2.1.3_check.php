@@ -25,8 +25,8 @@ if (isset($_POST['way'])) {
 	$temp = 0;
 	$way = $_POST['way'];
 	$user_ID = $_SESSION['user_ID'];
-	$product[] = $_SESSION['product'];
-	$amount[] = $_SESSION['amount'];
+	$product = $_SESSION['product'];
+	$amount = $_SESSION['amount'];
 	$time = date("Y-m-d H:i:s");
 	$total = $_SESSION['total'];
 	
