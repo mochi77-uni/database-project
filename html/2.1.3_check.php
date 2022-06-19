@@ -60,7 +60,7 @@ if (isset($_POST['way'])) {
 		echo "交易失敗<br>";
 	}
 	echo "		
-		<input type='button' value='確定' onclick='window.location.href='2_route.php'/>
+		<input type='button' value='確定' onclick='window.location.href= \"2_route.php \"'/>
 	";
 echo("</div>");
 

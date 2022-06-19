@@ -1,7 +1,10 @@
-2.3.2 作廢功能 尚未確認
-3.2 還沒做
-2.1.2 顯示折扣功能 尚未確認
+
+3.2 還沒做 不做了!
+
+2.1.2 顯示折扣功能 不做了
 
 $_SESSION["user_ID"]=$account;
 $_SESSION["authority"]=$authority;
 $_SESSION["store_ID"]=$store_ID;
+
+onclick='window.location.href="2_route.php"
