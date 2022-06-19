@@ -1,0 +1,79 @@
+<!--localhost/myProject/3.2.2_create_product.html -->
+
+<html>
+<head>
+	<title>新增商品</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<script lang="JavaScript">
+	function setTable(){
+		var table = document.getElementById("table")
+		var arr = new Array("ID","名字","分類","作者","譯者","版號","價錢","出版日期","書本介紹","頁數","大小","語言","裝訂方式")
+		var obj = table.insertRow(-1);
+	}
+
+</script>
+
+<body >
+	
+	<h1 align="center">編輯商品
+		
+	</h1>
+	<!-- <form action="create.php" method="post">	 -->
+	<table  id="table"  border="1" bgcolor="#cccccc" align="center">
+		<tr >
+			<td>
+				id
+				<input type="text" id = 'id'/>
+			</td>
+		</tr>
+		<tr >
+			<td>
+				name
+				<input type="text" id = 'name'/>
+			</td>
+		</tr>
+		<tr >
+			<td>
+				catergory
+				<input type="text" id = 'catergory'/>
+			</td>
+		</tr>
+		<tr >
+			<td>
+				writer
+				<input type="text" id = 'writer'/>
+			</td>
+		</tr>
+		<tr >
+			<td>
+				version
+				<input type="text" id = 'version'/>
+			</td>
+		</tr>
+		<tr >
+			<td>
+				date_of_publish
+				<input type="text" id = 'date_of_publish'/>
+			</td>
+		</tr>
+		<tr >
+			<td>
+				intro
+				<input type="text" id = 'intro'/>
+			</td>
+		</tr>
+	</table>
+	<!-- </form> -->
+	<div align="center">
+		<p></p>
+
+		<input type="button" value="新增商品"/>
+
+		<input type="submit" value="上一頁(取消變更)"/>
+
+		<input type="submit" value="確定(確認變更)"/>
+	</div>	
+</body>
+	
+</html>

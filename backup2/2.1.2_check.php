@@ -56,26 +56,18 @@ if (1) {
 	echo('<table id="table" width="500" border="1" bgcolor="#cccccc" align="center">');
 
 	for($i=0 ; $i<$j ; $i++){
-		$sql_q1 = "select price, name from books where ID = '$product[$i]';";
+		$sql_q1 = "select price, name from books where ID = product[$i];";
 		$sql_q2 = "select A.content from promotion as A, involve as B where B.books_ID = product[$i] and A.ID = B.promotion_ID;";
 		$result1 = mysqli_query($conn,$sql_q1);
 		$result2 = mysqli_query($conn,$sql_q2);
 		$price=0;
 		$name="defualt";
-		if($result1){
-			if($result1->num_rows > 0) {//應放在check.html
-				while($row = $result1->fetch_row()) {
-					$price = $row[0];
-					$name = $row[1];
-					$total += $row[0]*$amount[$i];
-				}
+		if($result1->num_rows > 0) {//應放在check.html
+			while($row = $result1->fetch_row()) {
+				$price = $row[0];
+				$name = $row[1];
+				$total += $row[0]*$amount[$i];
 			}
-			else{
-				echo"no find<br>";
-			}
-		}
-		else{
-			echo "error<br>";
 		}
 		if($result2->num_rows > 0){
 			while($row = $result2->fetch_row()) {
@@ -83,23 +75,21 @@ if (1) {
 			}
 		}
 		echo '<tr><td>商品名稱'.$name .'</td>'.'<td>商品數量'.$amount[$i] .'</td>'.'<td>商品金額'.$price .'</td></tr>';
-		mysqli_free_result($result1);
-		mysqli_free_result($result2);
+
 	}
 	echo('</table>');
-	echo("<form action='2.1.3_check.php' method='post'");
+	echo("<form action='2.1.2_check' method='post'");
 	echo('	<div align="center">
 		<p>原始金額'.$total.'
 		<p>最終金額<input type="text" name="amount" /></p>
 		<p>
-			<input type="radio" id="card" name="way" value="1"/><label for="card">刷卡</label>
-			<input type="radio" id="cash" name="way" value="0"/><label for="cash">現金</label>
+			<input type="radio" id="card" name="payment" value="1"/><label for="card">刷卡</label>
+			<input type="radio" id="cash" name="payment" value="0"/><label for="cash">現金</label>
 		</p>
 		<input type="submit" value="確定"/>
 
 
 		</div>
-		</form>
 	');
 	
 	if( count($content) > 0){
@@ -113,7 +103,6 @@ else{
 	echo "資料不完全";
 }
 mysqli_free_result($result1);
-mysqli_free_result($result2);
 $conn→close();		
 ?>
 </body>
