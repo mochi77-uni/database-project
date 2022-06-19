@@ -160,10 +160,10 @@ insert into books_trans values ('00004', '00010', '6');
 
 insert into promotion values ('00001', '2020-05-11', '2020-06-11', 'book_00001+00002 => 80% off');
 insert into promotion values ('00002', '2020-06-11', '2020-07-11', 'book_00002+00003 => 60% off');
-insert into promotion values ('00001', '2020-05-11', '2020-06-11', 'book_00003+00004 => 80% off');
-insert into promotion values ('00002', '2020-06-11', '2020-07-11', 'book_00005+00006 => 60% off');
-insert into promotion values ('00001', '2020-05-11', '2020-06-11', 'book_00006+00007 => 80% off');
-insert into promotion values ('00002', '2020-06-11', '2020-07-11', 'book_00007+00008 => 60% off');
+insert into promotion values ('00003', '2020-05-11', '2020-06-11', 'book_00003+00004 => 80% off');
+insert into promotion values ('00004', '2020-06-11', '2020-07-11', 'book_00005+00006 => 60% off');
+insert into promotion values ('00005', '2020-05-11', '2020-06-11', 'book_00006+00007 => 80% off');
+insert into promotion values ('00006', '2020-06-11', '2020-07-11', 'book_00007+00008 => 60% off');
 
 insert into store values ('00001', 'Zhongzheng Store', '1F., No.1, Gongyuan Rd., Zhongzheng Dist., Taipei City 100, Taiwan (R.O.C.)');
 insert into store values ('00002', 'Xindian Store', '1F., 1F., No.1, Sanmin Rd., Xindian Dist., New Taipei City 231, Taiwan (R.O.C.)');
@@ -171,8 +171,29 @@ insert into store values ('00003', 'Xin Store', '2F., 2F., No.2, Sanmin Rd., Xin
 
 insert into involve values ('00001', '00001', '00001');
 insert into involve values ('00001', '00002', '00001');
+insert into involve values ('00002', '00002', '00001');
+insert into involve values ('00002', '00003', '00001');
+insert into involve values ('00003', '00003', '00001');
+insert into involve values ('00003', '00004', '00001');
+insert into involve values ('00004', '00005', '00001');
+insert into involve values ('00004', '00006', '00001');
+insert into involve values ('00005', '00006', '00001');
+insert into involve values ('00005', '00007', '00001');
+insert into involve values ('00006', '00007', '00001');
+insert into involve values ('00006', '00008', '00001');
+insert into involve values ('00001', '00001', '00002');
+insert into involve values ('00001', '00002', '00002');
+insert into involve values ('00002', '00002', '00002');
 insert into involve values ('00002', '00003', '00002');
-insert into involve values ('00002', '00004', '00002');
+insert into involve values ('00003', '00003', '00002');
+insert into involve values ('00003', '00004', '00002');
+insert into involve values ('00004', '00005', '00003');
+insert into involve values ('00004', '00006', '00003');
+insert into involve values ('00005', '00006', '00003');
+insert into involve values ('00005', '00007', '00003');
+insert into involve values ('00006', '00007', '00003');
+insert into involve values ('00006', '00008', '00003');
+
 
 insert into storage values ('00001', '00001', '100');
 insert into storage values ('00001', '00002', '50');

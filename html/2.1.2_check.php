@@ -56,7 +56,7 @@ if (1) {
 	echo('<table id="table" width="500" border="1" bgcolor="#cccccc" align="center">');
 
 	for($i=0 ; $i<$j ; $i++){
-		$sql_q1 = "select price from books where ID = product[$i];";
+		$sql_q1 = "select price, name from books where ID = product[$i];";
 		$sql_q2 = "select A.content from promotion as A, involve as B where B.books_ID = product[$i] and A.ID = B.promotion_ID;";
 		$result1 = mysqli_query($conn,$sql_q1);
 		$result2 = mysqli_query($conn,$sql_q2);
@@ -65,6 +65,7 @@ if (1) {
 		if($result1->num_rows > 0) {//應放在check.html
 			while($row = $result1->fetch_row()) {
 				$price = $row[0];
+				$name = $row[1];
 				$total += $row[0]*$amount[$i];
 			}
 		}
@@ -92,6 +93,7 @@ if (1) {
 	');
 	
 	if( count($content) > 0){
+		$_SESSION['total'] = $total;
 		foreach($content as $eachCon){
 			echo("<p>".$eachCon."<p>");
 		}
