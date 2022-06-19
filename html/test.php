@@ -17,6 +17,9 @@
           
         <input type="submit" name="button2"
                 value="Button2"/>
+        <input type="radio" name="authority" value="0" >一般店員
+        <input type="radio" name="authority" value="1">管理者
+
     </form>
 
     <?php
@@ -30,6 +33,7 @@
         else{
             echo "no selected";
         }
+        echo ($_POST['authority']);
 
     ?>
       
