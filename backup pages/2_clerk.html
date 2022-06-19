@@ -1,0 +1,40 @@
+<!--localhost/database-project/html/2_clerk.html -->
+
+<html>
+<head>
+	<title>操作頁面</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<script>
+	function nextpage(str){
+		window.location.href=str;
+	}
+
+</script>
+<body>
+	
+	<h1 align="center">操作頁面</h1>
+	<!-- <form action="create.php" method="post">	 -->
+	  <table width="500" border="1" bgcolor="#cccccc" align="center">
+		<tr>
+            <th ><input type="button" value="結帳" onclick="nextpage('2.1.1_check.html')"/></th>
+        </tr>
+		<tr>
+            <th ><input type="button" value="銷售紀錄" onclick="nextpage('2.2_record.php')"/></th>
+        </tr>
+		<tr>
+            <th ><input type="button" value="庫存量" onclick="nextpage('2.3.1_inventory.html')"/></th>
+        </tr>
+		<tr>
+            <th ><input type="button" value="營收報表" onclick="nextpage('2.4_report.html')"/></th>
+        </tr>
+		<tr>
+            <th ><input type="button" value="登出" onclick="nextpage('1_login.html')"/></th>
+        </tr>
+    
+	  </table>
+	</form>
+	
+</body>
+	
+</html>

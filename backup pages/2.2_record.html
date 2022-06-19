@@ -1,0 +1,72 @@
+<!--localhost/myProject/html/2.2_record.html -->
+
+<html>
+<head>
+	<title>結帳</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<script lang="JavaScript">
+	function setTable(){
+		var table = document.getElementById("table")
+		var obj = table.insertRow(-1);
+		obj.innerHTML = 
+		'<th >商品<input type="text" name="product"/></th>'+
+		'<th >數量<input type="text" name="amount"/></th>'
+
+	}
+</script>
+
+<body>
+	
+	<h1 align="center">銷售紀錄
+		<input type="submit" value="上一頁"/>
+	</h1>
+	<form action="create.php" method="post">	
+	<table id="table" width="500" border="1" bgcolor="#cccccc" align="center">
+	<th >時間: 5/20 10:38</th>  
+	<th >金額:333</th>
+	<th><input type="submit" value="詳情"/></th>
+	</table>
+	</form>
+	<?php
+
+	// ******** update your personal settings ******** 
+	$servername = "localhost";
+	$username = "root";
+	$password = "db_project";
+	$dbname = "db_project";
+
+	// Connecting to and selecting a MySQL database
+	$conn = new mysqli($servername, $username, $password, $dbname);
+
+	if (!$conn->set_charset("utf8")) {
+		printf("Error loading character set utf8: %s\n", $conn->error);
+		exit();
+	}
+
+	// Check connection
+	if ($conn->connect_error) {
+		die("Connection failed: " . $conn->connect_error);
+	} 
+
+	$sql_q1 = "select * from transaction;";
+	$result1 = mysqli_query($conn,$sql_q1);
+	if($result1->num_rows > 0) {
+		while($row = $result1->fetch_assoc()) {
+			printf("%s %d %s %d %s %s<br>", 
+			$row["ID"],
+			$row["way"],
+			$row["user_ID"],
+			$row["time"],
+			$row["total"],
+			$row["invalid_time"]);    
+		}
+	}
+
+	mysqli_free_result($result1);
+	$conn→close();		
+	?>
+	
+</body>
+	
+</html>

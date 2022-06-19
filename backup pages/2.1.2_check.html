@@ -18,30 +18,27 @@
 
 <body>
 	
-	<h1 align="center">銷售紀錄
-		
+	<h1 align="center">結帳
+		<input type="submit" value="上一頁"/>
 	</h1>
 	<!-- <form action="create.php" method="post">	 -->
 	<table id="table" width="500" border="1" bgcolor="#cccccc" align="center">
-	<th >時間: 5/20 10:38</th>  
+	<th >商品名稱: abc</th>  
+	<th >數量:1</th>
 	<th >金額:333</th>
-
-	<tr ><td colspan="2">品項:abc</td></tr>
-	<tr ><td colspan="2">品項:abc</td></tr>
-	<tr ><td colspan="2">品項:abc</td></tr>
-	<tr ><td colspan="2">品項:abc</td></tr>
-
-
-
 	</table>
-	<!-- </form> -->
-	<div>
-		<p></p>
-		<label for="search">搜尋詳情</label>
-		<input type="text" name="search" value="輸入ID"/>
-		<p></p>
-		<input type="submit" value="上一頁"/>
-	</div>	
+	<div align="center">
+		<p>最終金額<input type="text" name="amount"/></p>
+		<p>
+			<input type="radio" id="card" name="payment"/><label for="card">刷卡</label>
+			<input type="radio" id="cash" name="payment"/><label for="cash">現金</label>
+		</p>
+		<input type="submit" value="確定"/>
+
+
+	</div>
+	</form>
+	
 </body>
 	
 </html>

@@ -1,0 +1,41 @@
+<!--localhost/database-project/html/1_login.html -->
+
+<html>
+<head>
+	<title>書店首頁</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<script>
+	function nextpage(){		
+		localStorage.setItem("id","local")
+		localStorage.setItem("password","2")
+		sessionStorage.setItem("id","session")
+		sessionStorage.setItem("password","2")
+
+		// window.location.href='2_clerk.html';
+	}
+</script>
+<body>
+	
+	<h1 align="center">登入頁面</h1>
+	<form action="../php/sign.php" method="post">	
+	  <table width="300" border="1" bgcolor="#cccccc" align="center">
+		<tr>
+		  <th>使用者ID</th>
+		  <td bgcolor="#FFFFFF"><input type="text" name="account" value="00001" /></td>
+		</tr>
+		<tr>
+		  <th>密碼</th>
+		  <td bgcolor="#FFFFFF"><input type="password" name="password" value = "jimmyp" /></td>
+		</tr>
+        <tr>
+            <th colspan="2"><input type="submit" value="登入" onclick="nextpage()"/></th>
+            
+          </tr>
+  
+	  </table>
+	</form>
+	
+</body>
+	
+</html>

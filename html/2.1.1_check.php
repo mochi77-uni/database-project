@@ -6,19 +6,17 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 </head>
 <script>
-	var row=1
     function insertRow() {
         var table = document.getElementById("table")
         // table.insertRow();
         var obj = table.insertRow(-1);
-		var a=0
-        obj.innerHTML = '<th>'+row+'</th>'
-		// '<th >'+
-		// 	'商品編號<input type="text" name="product"/>'+
-		// '</th>'+
-		// '<th >'+
-		// 	'數量<input type="text" name="amount"/>'+
-		// '</th>'
+        obj.innerHTML = 
+		'<th >'+
+			'商品編號<input type="text" name="product"/>'+
+		'</th>'+
+		'<th >'+
+			'數量<input type="text" name="amount"/>'+
+		'</th>'
         console.log(obj.attributes)
     }
 </script>
@@ -26,24 +24,47 @@
 <body>
 	
 	<h1 align="center">結帳
-		<input type="submit" value="上一頁"/>
+		<input type="button" value="上一頁"/>
 	</h1>
-	<?php
-
-	?>
-	  <table id = "table" width="500" border="1" bgcolor="#cccccc" align="center">
-		<tr>
-            <th colspan="2">
-				<input type="submit" value="新增品項" onclick="insertRow()"/>
+	<form method="post">
+	<table id = "table" width="500" border="1" bgcolor="#cccccc" align="center">
+	<tr>
+		<th colspan="2">
+			<input type="submit" value="新增品項" onclick="insertRow()"/>
 				<input type="submit" value="確定" />
-            </th>
-        </tr>    
-		<tr>
-            <th >商品編號<input type="text" name="product"/></th>
-            <th >數量<input type="text" name="amount"/></th>
-        </tr>
-	  </table>
+		</th>
+	</tr>    
 	
 </body>
-	
+<?php
+	if(isset($_POST['submit'])) {
+		foreach($_POST['product'] as $product){
+			echo "<script>console.log('Debug Objects: " . $product . "' );</script>";
+		}
+	}
+	else{
+
+		if(isset($_POST['setRows'])) {
+			$rows = $_POST['rows'];
+		}
+		else{
+			$rows=1;
+		}
+		for($i=1; $i<=$rows; $i++){
+			echo('	  
+			<tr>
+				<th >商品編號<input type="text" name="product[]"/></th>
+				<th >數量<input type="text" name="amount"/></th>
+			</tr>
+			');
+	}
+
+		echo('</table>');
+	}
+?>
+
+<div align="center">
+	<p></p>
+	<input type="submit" value="確定" name="submit" />
+</div>
 </html>
