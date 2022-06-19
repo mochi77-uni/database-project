@@ -1,8 +1,8 @@
-<!--localhost/myProject/3.1_product_report.html -->
+<!--localhost/myProject/3.2_edit_product.html -->
 
 <html>
 <head>
-	<title>統計商品銷售紀錄</title>
+	<title>編輯商品</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 </head>
 <script lang="JavaScript">
@@ -18,7 +18,7 @@
 
 <body>
 	
-	<h1 align="center">各商品銷售紀錄
+	<h1 align="center">編輯商品
 		
 	</h1>
 	<!-- <form action="create.php" method="post">	 -->
@@ -27,29 +27,41 @@
 		<tr >
 			<th >商品名稱</th>
 			<th >ID</th>
-			<th >銷售數量</th>
+			<th >售價</th>
+			<th >數量</th>
+			<th >編輯商品</th>
+			
 		</tr>
 		<tr >
 			<td >商品A</td>
 			<td >xxxxxxx</td>
-			<td >xxx</td>
+			<td >xxxxxxx</td>
+			<td >xxxxxxx</td>
+			<td>
+				<input type="button" value="修改"/>		
+				<input type="button" value="作廢"/>		
+			</td>
 		</tr>
 		<tr >
 			<td >商品B</td>
 			<td >xxxxxxx</td>
-			<td >xxxx</td>
+			<td >xxxxxxx</td>
+			<td >xxxxxxx</td>
+			<td>
+				<input type="button" value="修改"/>		
+				<input type="button" value="作廢"/>		
+			</td>
 		</tr>
-			
 
 
 	</table>
 	<!-- </form> -->
-	<div align ="center">
-
+	<div align="center">
+		<input type="button" value="新增商品"/>
 		<p></p>
-		<input type="submit" value="從高到低"/>
-		<input type="submit" value="從低到高"/>
-		<input type="submit" value="上一頁"/>
+		<input type="submit" value="上一頁(取消變更)"/>
+
+		<input type="submit" value="確定(確認變更)"/>
 	</div>	
 </body>
 	

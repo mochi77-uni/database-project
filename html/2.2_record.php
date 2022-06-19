@@ -59,7 +59,7 @@
 		}
 	}
 	echo('</table>');
-	echo('<form action="../php/record2.php" method="post">');
+	echo('<form action="2.2.2_record.php" method="post">');
 	echo('<input type="text" name="trans_ID" value="00001" /><input type="submit"  value="查詢" />');
 	echo('</form>');
 	mysqli_free_result($result1);
