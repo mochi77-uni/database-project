@@ -40,10 +40,10 @@
 <?php
 
 // ******** update your personal settings ******** 
-$servername = "localhost";
-$username = "root";
-$password = "db_project";
-$dbname = "db_project";
+$servername = "140.122.184.126";
+$username = "team17";
+$password = "k1PEco";
+$dbname = "team17";
 
 // Connecting to and selecting a MySQL database
 $conn = new mysqli($servername, $username, $password, $dbname);

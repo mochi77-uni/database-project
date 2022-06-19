@@ -31,10 +31,10 @@
 <?php
 
 // ******** update your personal settings ******** 
-$servername = "localhost";
-$username = "root";
-$password = "db_project";
-$dbname = "db_project";
+$servername = "140.122.184.126";
+$username = "team17";
+$password = "k1PEco";
+$dbname = "team17";
 
 // Connecting to and selecting a MySQL database
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -51,7 +51,7 @@ if ($conn->connect_error) {
 
 if (isset($_POST['books_ID'])) {
     $booksID = $_POST['books_ID'];
-	$sql_q1 = "select * from storage where books_ID = '$booksID';";
+	$sql_q1 = "select A.books_ID, B.name, A.number from storage as A, books as B where A.books_ID = B.ID and A.books_ID = '$booksID';";
 	$result1 = mysqli_query($conn,$sql_q1);
     if($result1){
         if($result1->num_rows > 0){
