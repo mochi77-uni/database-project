@@ -147,7 +147,7 @@ insert into books_trans values ('00003', '00001', '2');
 insert into books_trans values ('00001', '00002', '4');
 insert into books_trans values ('00005', '00002', '5');
 insert into books_trans values ('00002', '00003', '6');
-insert into books_trans values ('00002', '00003', '3');
+insert into books_trans values ('00003', '00003', '3');
 insert into books_trans values ('00003', '00004', '2');
 insert into books_trans values ('00001', '00004', '4');
 insert into books_trans values ('00010', '00005', '5');
