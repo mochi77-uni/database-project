@@ -63,12 +63,15 @@ if (1) {
 	$total = 0;
 	$product[] = $_SESSION['product'];
 	$amount[] = $_SESSION['amount'];
+	$content[count($product)];
 	$j = count($product);
 	echo('<table id="table" width="500" border="1" bgcolor="#cccccc" align="center">');
 
 	for($i=0 ; $i<$j ; $i++){
 		$sql_q1 = "select price from books where ID = product[$i];";
+		$sql_q2 = "select A.content from promotion as A, involve as B where B.books_ID = product[$i] and A.ID = B.promotion_ID;";
 		$result1 = mysqli_query($conn,$sql_q1);
+		$result2 = mysqli_query($conn,$sql_q2);
 		$price=0;
 		$name="defualt";
 		if($result1->num_rows > 0) {//應放在check.html
@@ -77,7 +80,12 @@ if (1) {
 				$total += $row[0]*$amount[$i];
 			}
 		}
-		echo('<td>'.$name .'</td>'.'<td>'.$amount[$i] .'</td>'.'<td>'.$price .'</td>'.);
+		if($result2->num_rows > 0){
+			while($row = $result2->fetch_row()) {
+				$content[$i] = $row[0];
+			}
+		}
+		echo '<td>'.$name .'</td>'.'<td>'.$amount[$i] .'</td>'.'<td>'.$price .'</td>';
 
 	}
 
@@ -91,7 +99,7 @@ if (1) {
 
 
 		</div>
-	')
+	');
 }else{
 	echo "資料不完全";
 }
