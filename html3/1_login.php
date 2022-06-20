@@ -50,13 +50,13 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 
 if (!mysqli_set_charset($conn,"utf8")) {
     printf("Error loading character set utf8: %s\n", $conn->error);
-    exit();
+    // exit();
 }
 
 // Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-} 
+// if ($conn->connect_error) {
+//     die("Connection failed: " . $conn->connect_error);
+// } 
 
 if (isset($_POST['account']) && isset($_POST['password'])) {
 	$account = $_POST['account'];
@@ -95,14 +95,14 @@ if (isset($_POST['account']) && isset($_POST['password'])) {
 				}
 				else{
 					echo  "<script type='text/javascript'>alert('身分錯誤!!');
-					window.location.href='1_login.html'
+					window.location.href='1_login.php'
 					</script>";
 			}
 				exit;   
 			}
 			else{
 				echo  "<script type='text/javascript'>alert('密碼錯誤!!');
-						window.location.href='1_login.html'
+						window.location.href='1_login.php'
 						</script>";
 			}
 			     
@@ -110,7 +110,7 @@ if (isset($_POST['account']) && isset($_POST['password'])) {
     }
 	else if($result->num_rows == 0){
 		echo  "<script type='text/javascript'>alert('無此帳號!!');
-				window.location.href='1_login.html'
+				window.location.href='1_login.php'
 				</script>";
 	}
 	else{
