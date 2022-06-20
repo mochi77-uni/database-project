@@ -118,7 +118,6 @@ if (isset($_POST['account']) && isset($_POST['password'])) {
 	}
 
 }else{
-	echo "資料不完全";
 	echo $account;
 	
 }

@@ -204,7 +204,7 @@ insert into storage values ('00001', '00006', '100');
 insert into storage values ('00001', '00007', '50');
 insert into storage values ('00001', '00008', '100');
 insert into storage values ('00001', '00009', '50');
-insert into storage values ('00001', '000010', '100');
+insert into storage values ('00001', '00010', '100');
 insert into storage values ('00002', '00001', '100');
 insert into storage values ('00002', '00002', '100');
 insert into storage values ('00002', '00003', '100');

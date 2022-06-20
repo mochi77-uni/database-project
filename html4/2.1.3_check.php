@@ -1,7 +1,7 @@
 <?php
 
 // ******** update your personal settings ******** 
-$servername = "140.122.184.126";
+$servername = "localhost";
 $username = "team17";
 $password = "k1PEco";
 $dbname = "team17";
