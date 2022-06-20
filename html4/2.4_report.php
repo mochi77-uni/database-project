@@ -51,10 +51,10 @@ if ($conn->connect_error) {
 } 
 
 if (1) {
-	$sql_q1 = "select sum( total ) from transaction where way = '0' and invalid_time = '0000-00-00 00:00:00';";
-    $sql_q2 = "select sum( total ) from transaction where way = '1'  and invalid_time = '0000-00-00 00:00:00';";
-    $sql_q3 = "select sum( total ) from transaction where invalid_time = '0000-00-00 00:00:00';";
-    $sql_q4 = "select sum( total ) from transaction where invalid_time <> '0000-00-00 00:00:00'";
+	$sql_q1 = "select sum( total ) from transaction where way = '0' and invalid_time = '1970-11-11 00:00:00';";
+    $sql_q2 = "select sum( total ) from transaction where way = '1'  and invalid_time = '1970-11-11 00:00:00';";
+    $sql_q3 = "select sum( total ) from transaction where invalid_time = '1970-11-11 00:00:00';";
+    $sql_q4 = "select sum( total ) from transaction where invalid_time <> '1970-11-11 00:00:00';";
 	$result1 = mysqli_query($conn,$sql_q1);
     $result2 = mysqli_query($conn,$sql_q2);
     $result3 = mysqli_query($conn,$sql_q3);

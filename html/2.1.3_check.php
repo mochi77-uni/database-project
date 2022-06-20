@@ -45,8 +45,9 @@ if (isset($_POST['way'])) {
 	$temp = $temp+1;
 	$trans_ID = strval($temp);
 	$trans_ID = str_pad($trans_ID, 5, "0", STR_PAD_LEFT);//new ID
+	$invalid_time = "1970-11-11 00:00:00";
 	// echo $trans_ID . $way. $user_ID . $time . $total;
-	$sql_q2 = "insert into transaction values('$trans_ID', '$way', '$user_ID', '$time', '$total', '0000-00-00 00:00:00');";
+	$sql_q2 = "insert into transaction values('$trans_ID', '$way', '$user_ID', '$time', '$total', '$invalid_time');";
 	$result2 = mysqli_query($conn,$sql_q2);
 	$j = count($product);
 	for($i=0 ; $i<$j ; $i++){
