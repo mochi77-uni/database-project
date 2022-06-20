@@ -50,7 +50,7 @@ if ($conn->connect_error) {
 
 if (isset($_POST['books_ID'])) {
     $booksID = $_POST['books_ID'];
-	$sql_q1 = "select A.books_ID, B.name, A.number from storage as A, books as B where A.books_ID = B.ID and A.books_ID = '$booksID';";
+	$sql_q1 = "select A.books_ID, B.name, A.number, A.store_ID from storage as A, books as B where A.books_ID = B.ID and A.books_ID = '$booksID';";
 	$result1 = mysqli_query($conn,$sql_q1);
     if($result1){
         if($result1->num_rows > 0){
@@ -61,7 +61,8 @@ if (isset($_POST['books_ID'])) {
                 printf("<td>%s</td> <td>%s</td> <td>%s</td></tr> ", 
                 $row[0] , 
                 $row[1] , 
-                $row[2]);
+                $row[2] ,
+                $row[3]);
             }
             echo('</table>');
         }
