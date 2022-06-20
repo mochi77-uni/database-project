@@ -1,0 +1,53 @@
+<!--localhost/database-project/html/3_administrator.html -->
+
+<html>
+<head>
+	<title>操作頁面</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<script>
+	function nextpage(str){
+		window.location.href=str;
+	}
+
+</script>
+
+<body>
+	
+	<h1 align="center">操作頁面(管理員)</h1>
+	<!-- <form action="create.php" method="post">	 -->
+	  <table width="500" border="1" bgcolor="#cccccc" align="center">
+		<tr>
+            <th ><input type="button" value="結帳" onclick="nextpage('2.1.1_check.php')"/></th>
+        </tr>
+		<tr>
+            <th ><input type="button" value="銷售紀錄" onclick="nextpage('2.2_record.php')"/></th>
+        </tr>
+		<tr>
+            <th ><input type="button" value="庫存量" onclick="nextpage('2.3.1_inventory.php')"/></th>
+        </tr>
+		<tr>
+            <th ><input type="button" value="營收報表" onclick="nextpage('2.4_report.php')"/></th>
+        </tr>
+		<tr>
+            <th ><input type="button" value="統計商品銷售紀錄" onclick="nextpage('3.1_product_report.php')"/></th>
+        </tr>
+		<!-- <tr>
+            <th ><input type="button" value="調整商品售價" onclick="nextpage('3.2_edit_product.php')"/></th>
+        </tr> -->
+		<tr>
+            <th ><input type="button" value="新增使用者" onclick="nextpage('3.3_createUser.php')"/></th>
+        </tr>
+		<!-- <tr>
+            <th ><input type="button" value="新增促銷活動" onclick="nextpage('3.4_promotion.php')"/></th>
+        </tr> -->
+		<tr>
+            <th ><input type="button" value="登出"  onclick="nextpage('1_login.php')"/></th>
+        </tr>
+    
+	  </table>
+	</form>
+	
+</body>
+	
+</html>
