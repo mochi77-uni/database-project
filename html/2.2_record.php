@@ -40,7 +40,7 @@
 	// Connecting to and selecting a MySQL database
 	$conn = new mysqli($servername, $username, $password, $dbname);
 
-	if (!$conn->set_charset("utf8")) {
+	if (!mysqli_set_charset($conn,"utf8")) {
 		printf("Error loading character set utf8: %s\n", $conn->error);
 		exit();
 	}

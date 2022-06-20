@@ -43,7 +43,7 @@
         $sql_q2 = "select A.book_ID, B.name, sum(A.amount) from books_trans as A, books as B where A.book_ID = B.ID group by A.book_ID, B.name ORDER BY sum(amount) DESC;";
         $result2 = mysqli_query($conn,$sql_q2);
 
-        if (!$conn->set_charset("utf8")) {
+        if (!mysqli_set_charset($conn,"utf8")) {
             printf("Error loading character set utf8: %s\n", $conn->error);
             exit();
         }
